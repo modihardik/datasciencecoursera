@@ -1,0 +1,56 @@
+---
+title: "ReadMe"
+---
+<HR>
+##Getting and Cleaning Data Course Project
+The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set.
+The original dataset is:
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+</HR>
+
+
+<HR>
+##This repo has following files
+* ReadMe.Rmd -- this file
+* CodeBook.Rmds -- codebook describing variables, the data (from Course project website) and transformation performed.
+* run_analysis.R -- actual R code
+</HR>
+
+<HR>
+##run_analysis.R steps
+
+You should create one R script called run_analysis.R that does the following.
+
+1) Merges the training and the test sets to create one data set.
+2) Extracts only the measurements on the mean and standard deviation for each measurement.
+3) Uses descriptive activity names to name the activities in the data set
+4) Appropriately labels the data set with descriptive variable names.
+5) From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+Script should run from folder: UCI HAR Dataset. The script assumes it has in it's working directory and have the following files and folders:
+
+* activity_labels.txt
+* features.txt
+* test/
+* train/
+
+### Step 1
+1) Read training and the test data sets.
+2) Combine the training and test data sets to make one final data sets.
+
+### Step 2
+1) Read the feature file and create index of required variables, mean and standard deviation
+2) Select those data and create new tidy data sets.
+
+### Step 3
+1) Read training and the test label file.
+2) Combine the training and test label file to make final label file.
+3) Use this final label file to give descriptive activity name in tidy data sets.
+
+### Step 4
+1) index created in step 2 to retrieve extract variables from data sets.
+2) Further this index used to retrieve variables names from features.txt file and label the tidy data sets.
+
+### Step 5
+1) Create the mean of each combination of label and activity by using aggregate() function to create tidy data sets.
+2) Write this tidy data to file "tidy.har.txt"
+
